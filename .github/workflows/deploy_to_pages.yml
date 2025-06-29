@@ -8,7 +8,7 @@ on:
 permissions:
   contents: read
   pages: write
-  id-ttoken: write
+  id-token: write
 env:
   DEPLOY_BASE_URL: $ {{ vars.DEPLOY_BASE_URL}}
 concurrency:
