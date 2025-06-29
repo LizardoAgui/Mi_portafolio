@@ -6,20 +6,20 @@ on:
     - main
   workflow_dispatch:
 permissions:
- contents: read
- pages: write
- id-ttoken: write
- env:
- DEPLOY_BASE_URL: $ {{ vars.DEPLOY_BASE_URL}}
- concurrency:
+  contents: read
+  pages: write
+  id-ttoken: write
+env:
+  DEPLOY_BASE_URL: $ {{ vars.DEPLOY_BASE_URL}}
+concurrency:
   group: "pages"
   cancel-in-progress: true
 
-  jobs:
-    build:
-     environment:
-       name: github-pages
-       url: $ {{ steps.github-pages.outputs.url}}
+jobs:
+  build:
+    environment:
+      name: github-pages
+      url: $ {{ steps.github-pages.outputs.url}}
     runs-on: ubuntu-latest
     steps:
       - name: Clonar el Repositorio
