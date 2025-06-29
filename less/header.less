@@ -1,0 +1,41 @@
+header {
+  background-color: @main-color;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .logo-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .perfil {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid @accent-color;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: @accent-color;
+    }
+  }
+
+  nav {
+    margin-top: 0.5rem;
+
+    a {
+      margin: 0 1rem;
+      color: @text-color;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        color: lighten(@accent-color, 10%);
+      }
+    }
+  }
+}
